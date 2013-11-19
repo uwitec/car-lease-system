@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="Car" table="T_CAR" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="identity" />	
+		</id>
+		<property name="carId" type="string" length="20" column="CAR_ID" />
+		<property name="registerDate"  column="REGISTER_DATE" />
+		<property name="ownerName" type="string" length="50" column="OWNER_NAME" />
+		<property name="mobilePhone" type="string" length="15" column="MOBILEPHONE" />
+		<property name="status" type="int" column="STATUS" />
+		<property name="imagePath" type="string" length="150" column="IMAGE_PATH" />
+		<property name="ownerIdCarNumber" type="string" length="20" column="OWNER_IDCARNUMBER" />
+		<property name="engineNumber" type="string" length="100" column="ENGINE_NUMBER" />
+		<property name="bodyNumber" type="string" length="100" column="BODY_NUMBER" />
+		<property name="organizationId" type="int" column="ORGANIZATION_ID" />
+		<property name="carSource" type="int" column="CAR_SOURCE" />
+
+		<property name="brandId" type="int" column="BRAND_ID" />
+		<property name="price" type="int" column="PRICE" />
+		<property name="foregift" type="int" column="FOREGIFT" />
+		<property name="pricePerHour" type="int" column="PRICE_PER_HOURE" />
+		<property name="pricePerKm" type="int" column="PRICE_PER_KM" />
+		<property name="priceRM" type="int" column="PRICE_RM" />
+		<property name="pricePerHourRM" type="int" column="PRICE_PER_HOUR_RM" />
+		<property name="pricePerKmRM" type="int" column="PRICE_PER_KM_RM" />
+		<property name="km" type="int" column="KM" />
+		<property name="carCategory" type="string" length="100" column="CAR_CATEGORY" />
+		
+		
+	</class>
+</hibernate-mapping>

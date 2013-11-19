@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="AlarmParam" table="T_ALARM_PARAMETER" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="identity" />	
+		</id>
+		<property name="paramName" type="string" length="50" column="PARAM_NAME" />
+		<property name="paramValue" type="string" length="50" column="PARAM_VALUE" />
+		<property name="alarmSettingId" type="int" column="FK_CONF_ID" />
+		<property name="duration" type="int" column="DURATION" />
+		<property name="alarmMethod" type="int" column="METHOD" />
+	</class>
+</hibernate-mapping>

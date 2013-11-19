@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="Customer" table="T_CUSTOMER" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="identity" />	
+		</id>
+		<property name="vipLevel" type="int" column="VIP_LEVEL" />
+		<property name="idCardNumber" type="string" length="20" column="IDCARDNUMBER" />
+		<property name="customerName" type="string" length="50" column="CUSTOMER_NAME" />
+		<property name="gender" type="string" length="1" column="GENDER" />
+		<property name="company" type="string" length="100" column="COMPANY" />
+		<property name="mobilePhone" type="string" length="15" column="MOBILEPHONE" />
+		<property name="companyAddress" type="string" length="15" column="COMPANY_ADDR" />
+		<property name="companyPhone" type="string" length="15" column="COMPANY_PHONE" />
+		<property name="address" type="string" length="15" column="ADDRESS" />
+
+		<property name="warrantor" type="string" length="20" column="WARRANTOR" />
+		<property name="introducer" type="string" length="20" column="INTRODUCER" />
+		<property name="idImgPath" type="string" length="100" column="IDIMGPATH" />
+		<property name="driverLicensePath" type="string" length="100" column="DRIVERLICENSEPATH" />
+		<property name="registerDate" column="REGISTER_DATE" />
+		<property name="endDate" column="END_DATE" />
+		<property name="blacklist" column="BLACKLIST" />
+		<property name="customerLevel" column="CUSTOMER_LEVEL" />
+
+	</class>
+</hibernate-mapping>

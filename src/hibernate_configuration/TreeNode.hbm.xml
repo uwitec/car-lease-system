@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="TreeNode" table="T_MENU" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="increment" />	
+		</id>
+		<property name="url" type="string" length="50" column="URL" />
+		<property name="text" type="string" length="50" column="_TEXT" />
+		<property name="iconCls" type="string" length="50" column="ICON_CLASS" />
+		<property name="leaf" type="string" length="5" column="LEAF" />
+		<property name="parentId" type="int" column="PARENT_ID" />
+		<property name="roleId" type="int" column="ROLE_ID" />
+	</class>
+</hibernate-mapping>

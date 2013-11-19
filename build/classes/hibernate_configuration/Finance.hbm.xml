@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="Finance" table="T_FINANCE" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="identity" />	
+		</id>
+		<property name="serialNumber" type="string" length="50" column="SERIAL_NUMBER" />
+		<property name="payDirection" type="int" column="DIRECTION" />
+		<property name="financeType" type="int" column="FINANCE_TYPE" />
+		<property name="money" type="int" column="MONEY" />
+		<property name="remark" type="string" length="200" column="REMARK" />
+		<property name="payDate" column="PAY_DATE" />
+		<property name="transactor" type="string" length="20" column="TRANSACTOR" />
+		<property name="transactorOver" type="string" length="20" column="TRANSACTOR_OVER" />
+		<property name="transactorName" type="string" length="20" column="TRANSACTOR_NAME" />
+		<property name="transactorOverName" type="string" length="20" column="TRANSACTOR_OVER_NAME" />
+		<property name="payType" type="int" column="PAYTYPE" />
+		<property name="organizationId" type="int" column="ORGANIZATION_ID" />
+	</class>
+</hibernate-mapping>

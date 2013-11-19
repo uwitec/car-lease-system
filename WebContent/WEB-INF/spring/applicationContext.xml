@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+      	   http://www.springframework.org/schema/tx 
+      	   http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+      	   http://www.springframework.org/schema/context
+      	   http://www.springframework.org/schema/context/spring-context-2.5.xsd
+      	   http://www.springframework.org/schema/aop 
+      	   http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+		
+		<!-- 引入其他模块配置 -->
+		<import resource="applicationContext_dao.xml" />
+		
+		<!-- 配置  数据库属性文件-->
+		<bean id="propertyConfigurer"
+			class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+			<property name="locations">
+				<list>
+					<value>/WEB-INF/jdbc.properties</value>
+				</list>
+			</property>
+		</bean>
+		
+		<!-- 配置数据源 -->
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+			destroy-method="close">
+			<property name="driverClassName">
+				<value>${jdbc.driverName}</value>
+			</property>
+			<property name="url">
+				<value>${jdbc.url}</value>
+			</property>
+			<property name="username">
+				<value>${jdbc.userName}</value>
+			</property>
+			<property name="password">
+				<value>${jdbc.password}</value>
+			</property>
+	
+			<!-- 初始连接数目  -->
+			<property name="initialSize">
+				<value>${jdbc.initialSize}</value>
+			</property>
+	
+			<!-- 最大连接数目  -->
+			<property name="maxActive">
+				<value>${jdbc.maxActive}</value>
+			</property>
+	
+			<!-- 最大空闲连接数目  -->
+			<property name="maxIdle">
+				<value>${jdbc.maxIdle}</value>
+			</property>
+	
+			<!-- 最小空闲连接数目  -->
+			<property name="minIdle">
+				<value>${jdbc.minIdle}</value>
+			</property>
+		</bean>
+	
+		<!-- hibernate配置 -->
+		<bean id="sessionFactory"
+			class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+			<property name="dataSource">
+				<ref bean="dataSource" />
+			</property>	<!-- 配置数据源 -->
+	
+			<property name="hibernateProperties">
+				<props>
+					<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+				<!-- 	<prop key="hibernate.show_sql">true</prop> -->
+					<prop key="hibernate.hbm2ddl.auto">update</prop>
+				</props>
+			</property>
+			<property name="mappingResources">
+				<list>
+					<value>hibernate_configuration/User.hbm.xml</value>
+					<value>hibernate_configuration/TreeNode.hbm.xml</value>
+					<value>hibernate_configuration/Role.hbm.xml</value>
+					<value>hibernate_configuration/Dictionary.hbm.xml</value>
+					<value>hibernate_configuration/Customer.hbm.xml</value>
+					<value>hibernate_configuration/Organization.hbm.xml</value>
+					<value>hibernate_configuration/Car.hbm.xml</value>
+					<value>hibernate_configuration/Price.hbm.xml</value>
+					<value>hibernate_configuration/LeaseRecord.hbm.xml</value>
+					<value>hibernate_configuration/Finance.hbm.xml</value>
+					<value>hibernate_configuration/RunRecord.hbm.xml</value>
+					<value>hibernate_configuration/AlarmSetting.hbm.xml</value>
+					<value>hibernate_configuration/AlarmType.hbm.xml</value>
+					<value>hibernate_configuration/AlarmParam.hbm.xml</value>
+					<value>hibernate_configuration/FileManagement.hbm.xml</value>
+				</list>
+			</property>
+			<property name="packagesToScan">
+				<list>
+					<value>com.org.dqgb.entity</value>
+				</list>
+			</property>
+		</bean>
+	
+		<!-- 配置事务管理器  -->
+		<bean id="txManager"
+			class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+			<property name="sessionFactory" ref="sessionFactory" />
+		</bean>
+		
+		<!-- 配置自动扫描 -->
+		<context:component-scan base-package="com.org.dqgb.*"/>
+		<!--	配置注解方式管理事务 -->
+		<tx:annotation-driven transaction-manager="txManager" />
+</beans>         

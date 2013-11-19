@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 配置单个上传文件的最大的容量 10M-->
+	<constant name="struts.multipart.maxSize" value="10000000"></constant>
+	
+	
+ 	<!--  外部action 配置文件的引用 -->
+ 	
+ 	<include file="/struts2_config/struts_common.xml"/>						<!-- 不直接登录  -->
+ 	<include file="/struts2_config/struts_ajaxInterceptor.xml"/>			<!-- 拦截ajax请求  -->
+ 	<include file="/struts2_config/struts_interceptor.xml"/>				<!-- 拦截普通请求  -->
+ 	
+</struts>

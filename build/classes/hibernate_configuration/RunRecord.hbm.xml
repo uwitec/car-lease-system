@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="RunRecord" table="T_RUN_RECORD" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="identity" />	
+		</id>
+		<property name="fetchOrgId" type="int" column="FETCH_ORG_ID" />
+		<property name="giveBackOrgId" type="int" column="GIVEBACK_ORG_ID" />
+		<property name="orderFormSerialNumber" type="string" length="50" column="ORDERFORM_SERIALNUMBER" />
+		<property name="beginTransactor" type="string" length="20" column="BEGIN_TRANSACTOR" />
+		<property name="endTransactor" type="string" length="20" column="END_TRANSACTOR" />
+		<property name="carId" type="string" length="20" column="CAR_ID" />
+		<property name="dateBegin" column="DATE_BEGIN" />
+		<property name="dateEnd" column="DATE_END" />
+		
+		<property name="startKm" type="int" column="START_KM" />
+		<property name="endKm" type="int" column="END_KM" />
+	</class>
+</hibernate-mapping>

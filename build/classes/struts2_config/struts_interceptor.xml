@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+ 	<!-- 该xml文件下的普通请求会被拦截器 'LoginInterceptor' 拦截, -->
+ 	
+ 	<package name="commonInterceptor" extends="json-default">
+ 		<interceptors>
+			
+			<!-- 定义登录拦截器 -->
+			<interceptor name="LoginInterceptor" class="com.org.dqgb.interceptor.LoginInterceptor"></interceptor>	
+			
+			<interceptor-stack name="LoginInterceptorStack">
+				<interceptor-ref name="LoginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+			
+		</interceptors>
+		
+		<!-- 引用自定义默认拦截器  -->
+		<default-interceptor-ref name="LoginInterceptorStack"/>
+		
+		<global-results>
+			<result name="input">
+				/login.jsp
+			</result>
+			<result name="failed">
+				/WEB-INF/pages/failed.jsp
+			</result>
+		</global-results>
+		
+		<!-- 用户管理界面 -->
+ 		<action name="gotoUserPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/user.jsp
+ 			</result>
+ 		</action>
+		
+		<!-- 欠费统计界面 -->
+ 		<action name="gotoArrearageSummaryPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/arrearageSummary.jsp
+ 			</result>
+ 		</action>
+		
+		<!-- 财务明细界面 -->
+ 		<action name="gotoFinanceDetailsPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/financeDetails.jsp
+ 			</result>
+ 		</action>
+ 		
+		<!-- 员工产值界面 -->
+ 		<action name="gotoEmployeesOutputPage" class="ChartsAction" method="gotoDailyViolateSuretySumPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/employeesOutput.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 角色管理界面 -->
+ 		<action name="gotoRolePage">
+ 			<result name="success">
+ 				/WEB-INF/pages/role.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到分配角色界面 -->
+ 		<action name="gotoAddRolePage" class="RoleAction" method="gotoAddRolePage">
+ 			<result name="success">
+ 				/WEB-INF/pages/addRole.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到用户信息修改管理界面 -->
+ 		<action name="gotoModifyUserPage" class="UserAction" method="gotoModifyUserPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/modifyUser.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到增加用户界面 -->
+ 		<action name="gotoAddUserPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/addUser.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到创建角色界面 -->
+ 		<action name="gotoCreateRole">
+ 			<result name="success">
+ 				/WEB-INF/pages/createRole.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到字典管理界面 -->
+ 		<action name="gotoDictionaryPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/dictionary.jsp
+ 			</result>
+ 		</action>
+
+ 		<!-- 跳转到字典管理界面 -->
+ 		<action name="gotoViolateRecord">
+ 			<result name="success">
+ 				/WEB-INF/pages/violateRecord.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到新增品牌信息界面 -->
+ 		<action name="gotoAddBrandPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/addBrand.jsp
+ 			</result>
+ 		</action>
+ 	
+ 		<!-- 跳转到修改品牌信息界面 -->
+ 		<action name="gotoModifyBrandPage" class="DictionaryAction" method="gotoModifyBrandPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/modifyBrand.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到修改字典数据界面 -->
+ 		<action name="gotoModifyDictionaryPage" class="DictionaryAction" method="gotoModifyDictionaryPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/modifyDictionary.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到组织维护界面 -->
+ 		<action name="gotoOrganizationPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/organization.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到组织维护界面 -->
+ 		<action name="gotoCustomerAdditionPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/customerAddition.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到内部用车界面 -->
+ 		<action name="gotoNonBusinessRunrecordPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/nbrr.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到新增组织界面 -->
+ 		<action name="gotoAddOrganizationPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/addOrganization.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到修改组织界面 -->
+ 		<action name="gotoModifyOrganizationPage" class="OrganizationAction" method="gotoModifyOrganizationPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/modifyOrganization.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转车辆管理界面 -->
+ 		<action name="gotoCarPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/car.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转车辆管理界面 -->
+ 		<action name="gotoSimpleCarPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/simpleCar.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到新增车辆页面 -->
+ 		<action name="gotoAddCarPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/addCar.jsp
+ 			</result>
+ 		</action>
+ 	
+ 		<!-- 跳转到车辆预览界面 -->
+ 		<action name="browseCar" class="CarAction" method="browseCar">
+ 			<result name="success">
+ 				/WEB-INF/pages/browseCar.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到发车界面 -->
+ 		<action name="gotoSetOutCarPage" class="CarAction" method="gotoSetOutCarPage"> 
+			<result name="success">
+ 				/WEB-INF/pages/setOut.jsp
+ 			</result>
+		</action>
+		
+ 		<!-- 跳转到车辆品牌管理界面 -->
+ 		<action name="gotoBrandPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/brand.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到车辆价格管理界面 -->
+ 		<action name="gotoCarPricePage">
+ 			<result name="success">
+ 				/WEB-INF/pages/price.jsp
+ 			</result>
+ 		</action>
+ 	
+ 		<!-- 跳转到在线人员管理界面 -->
+ 		<action name="gotoOnlineUser">
+ 			<result name="success">
+ 				/WEB-INF/pages/online.jsp
+ 			</result>
+ 		</action>
+ 	
+ 		<!-- 跳转到车辆资料修改界面 -->
+ 		<action name="gotoCarModifyPage"  class="CarAction" method="gotoCarModifyPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/modifyCar.jsp
+ 			</result>
+ 		</action>
+ 	
+ 		<!-- 跳转到收车界面 -->
+ 		<action name="gotoGivebackCarPage"  class="CarAction" method="gotoGivebackCarPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/giveBackCar.jsp
+ 			</result>
+ 		</action>
+ 	
+ 		<!-- 跳转财务追加界面 -->
+ 		<action name="gotoSupplementFinance" class="LeaseRecordAction" method="gotoSupplementFinance">
+ 			<result name="success">
+ 				/WEB-INF/pages/supplementFinance.jsp
+ 			</result>
+ 			<result name="failed">
+ 				/WEB-INF/pages/failed.jsp
+ 			</result>
+ 		</action>
+ 	
+ 		<!-- 跳转到年度报表界面 -->
+ 		<action name="gotoAnnualChartPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/annualChart.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到销售月报界面 -->
+ 		<action name="gotoMensalChartPage" class="ChartsAction" method="gotoMensalChartPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/mensalChart.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到销售日报界面 -->
+ 		<action name="gotoDailyChartPage" class="ChartsAction" method="gotoDailyChartPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/dailyChart.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到季度报表界面 -->
+ 		<action name="gotoQuarterChartPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/quarterChart.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到修改价格界面 -->
+ 		<action name="gotoModifyPricePage" class="PriceAction" method="gotoModifyPricePage">
+ 			<result name="success">
+ 				/WEB-INF/pages/modifyPrice.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到增加价格信息界面 -->
+ 		<action name="gotoAddPricePage">
+ 			<result name="success">
+ 				/WEB-INF/pages/addPrice.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到客户信息界面 -->
+ 		<action name="gotoCustomerPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/customer.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到客户信息界面 -->
+ 		<action name="gotoSimpleCustomerPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/simpleCustomer.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到客户鉴别界面 -->
+ 		<action name="gotoCustomerIndentifyPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/customerIdentify.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 跳转到客户信息修改界面 -->
+		<action name="gotoModifyCustomerPage" class="CustomerAction" method="gotoModifyCustomerPage">
+			<result name="success">
+ 				/WEB-INF/pages/modifyCustomer.jsp
+ 			</result>
+		</action>
+ 		
+ 		<!-- 跳转到新增客户资料界面 -->
+		<action name="gotoAddCustomerPage">
+			<result name="success">
+ 				/WEB-INF/pages/addCustomer.jsp
+ 			</result>
+		</action>
+ 		
+ 		<!-- 跳转到新增客户资料界面 -->
+		<action name="gotoShortAddCustomerPage">
+			<result name="success">
+ 				/WEB-INF/pages/addShortCustomer.jsp
+ 			</result>
+		</action>
+ 		
+ 		<!-- 跳转到订单管理界面 -->
+		<action name="gotoLeaseRecordPage"  class="LeaseRecordAction" method="gotoLeaseRecordPage">
+			<result name="success">
+ 				/WEB-INF/pages/leaseRecord.jsp
+ 			</result>
+		</action>
+ 		
+ 		<!-- 跳转到下订单界面 -->
+		<action name="gotoAddOrderFormPage" class="LeaseRecordAction" method="gotoAddOrderFormPage">
+			<result name="success">
+ 				/WEB-INF/pages/addLeaseRecord.jsp
+ 			</result>
+		</action>
+ 		
+ 		<!-- 续租详情界面 -->
+		<action name="gotoReletDetailsPage" class="LeaseRecordAction" method="gotoReletDetailsPage">
+			<result name="success">
+ 				/WEB-INF/pages/reletDetails.jsp
+ 			</result>
+		</action>
+ 		
+ 		<!-- 跳转到下订单界面 -->
+		<action name="gotoModifyOrderFormPage" class="LeaseRecordAction" method="gotoModifyOrderFormPage">
+			<result name="success">
+ 				/WEB-INF/pages/modifyLeaseRecord.jsp
+ 			</result>
+		</action>
+
+ 		<!-- 跳转到车辆调度管理界面 -->
+		<action name="gotoCarControlCenter">
+			<result name="success">
+ 				/WEB-INF/pages/carControlCenter.jsp
+ 			</result>
+		</action>
+ 		
+ 		<!-- 跳转到车辆订单预览界面 -->
+		<action name="gotoBrowseOrderFormsPages" class="LeaseRecordAction" method="gotoBrowseOrderFormsPages">
+			<result name="success">
+ 				/WEB-INF/pages/browseOrderforms.jsp
+ 			</result>
+		</action>
+ 		
+ 		<!-- 跳转到车辆订单打印界面 -->
+		<action name="gotoPrintOrderForm" class="LeaseRecordAction" method="gotoPrintOrderForm">
+			<result name="success">
+ 				/WEB-INF/pages/printOrderForm.jsp
+ 			</result>
+		</action>
+		
+		<!-- 跳转到财务结算单打印界面 -->
+		<action name="gotoFinanceSettlePrintPage" class="LeaseRecordAction" method="gotoFinanceSettlePrintPage">
+			<result name="success">
+ 				/WEB-INF/pages/financePage.jsp
+ 			</result>
+			<result name="failed">
+ 				/WEB-INF/pages/failed.jsp
+ 			</result>
+		</action>
+ 	
+ 		<!-- 跳转到财务结算界面 -->
+		<action name="gotoFinanceSettlePage" class="LeaseRecordAction" method="gotoFinanceSettlePage">
+			<result name="success">
+ 				/WEB-INF/pages/financeSettlePage.jsp
+ 			</result>
+		</action>
+ 	
+ 		<!-- 跳转到订单财务信息界面 -->
+		<action name="gotoOrderFinancePage" class="LeaseRecordAction" method="gotoOrderFinancePage">
+			<result name="success">
+ 				/WEB-INF/pages/leaseRecordFinancePage.jsp
+ 			</result>
+		</action>
+ 	
+ 		<!-- 跳转到财务结算界面 -->
+		<action name="gotoHistoryOrderPage" class="LeaseRecordAction" method="gotoHistoryOrderPage">
+			<result name="success">
+ 				/WEB-INF/pages/historyOrders.jsp
+ 			</result>
+		</action>
+ 	
+ 		<!--跳转到预警设置界面  -->
+		<action name="gotoAlarmPage">
+			<result name="success">
+ 				/WEB-INF/pages/alarm.jsp
+ 			</result>
+		</action>
+ 	
+ 		<!--跳转到文件资料 管理界面  -->
+		<action name="gotoFileManagement">
+			<result name="success">
+ 				/WEB-INF/pages/fileManagement.jsp
+ 			</result>
+		</action>
+		
+ 		<!--跳转到添加文件资料界面  -->
+		<action name="gotoAddFilePage" class="FileManagementAction" method="gotoAddFilePage">
+			<result name="success">
+ 				/WEB-INF/pages/addFile.jsp
+ 			</result>
+		</action>
+		
+ 		<!--跳转文件预警界面  -->
+		<action name="gotoFileAlarmPage">
+			<result name="success">
+ 				/WEB-INF/pages/fileAlarm.jsp
+ 			</result>
+		</action>
+		
+ 		<!--跳转订单预警界面  -->
+		<action name="gotoOrderAlarmPage">
+			<result name="success">
+ 				/WEB-INF/pages/leaseRecordAlarm.jsp
+ 			</result>
+		</action>
+		
+ 		<!--跳转订单预警界面  -->
+		<action name="gotoDeadlineOrderPage">
+			<result name="success">
+ 				/WEB-INF/pages/leaseRecordDeadline.jsp
+ 			</result>
+		</action>
+		
+ 		<!--跳转违章保证金预警界面  -->
+		<action name="gotoVsAlarmPage">
+			<result name="success">
+ 				/WEB-INF/pages/violateSuretyAlarm.jsp
+ 			</result>
+		</action>
+
+ 		<!--跳转到添加文件资料界面  -->
+		<action name="gotoModifyFilePage" class="FileManagementAction" method="gotoModifyFilePage">
+			<result name="success">
+ 				/WEB-INF/pages/modifyFile.jsp
+ 			</result>
+		</action>
+
+ 		<!--跳转到日销售明细界面 -->
+		<action name="gotoDailyReportDetails" class="ChartsAction" method="gotoDailyReportDetails">
+			<result name="success">
+ 				/WEB-INF/pages/dailyChartDetails.jsp
+ 			</result>
+		</action>
+
+ 		<!--跳转到预报统计明细界面 -->
+		<action name="gotoMensalReportSumDetails" class="ChartsAction" method="gotoDailyReportDetails">
+			<result name="success">
+ 				/WEB-INF/pages/mensalChartSumDetails.jsp
+ 			</result>
+		</action>
+
+ 		<!--跳转到保证金管理界面 -->
+		<action name="gotoViolateSuretyPage">
+			<result name="success">
+ 				/WEB-INF/pages/violateSurety.jsp
+ 			</result>
+		</action>
+
+ 		<!--跳转到增加保证金界面 -->
+		<action name="gotoAddViolateSuretyPage" class="ViolateSuretyAction" method="gotoAddViolateSuretyPage">
+			<result name="success">
+ 				/WEB-INF/pages/addViolateSurety.jsp
+ 			</result>
+		</action>
+
+ 		<!--跳转到修改保证金界面 -->
+		<action name="gotoModifyViolateSuretyPage" class="ViolateSuretyAction" method="gotoModifyViolateSuretyPage"> 
+			<result name="success">
+ 				/WEB-INF/pages/modifyViolateSurety.jsp
+ 			</result>
+		</action>
+
+ 		<!--跳转到养护记录界面 -->
+		<action name="gotoMaintainRecordPage" class="MaintainAction" method="gotoMaintainRecordPage"> 
+			<result name="success">
+ 				/WEB-INF/pages/maintainRecord.jsp
+ 			</result>
+		</action>
+
+ 		<!--跳转到新增养护记录界面 -->
+		<action name="gotoAddMaintainRecordPage" class="MaintainAction" method="gotoAddMaintainRecordPage"> 
+			<result name="success">
+ 				/WEB-INF/pages/addMaintainRecord.jsp
+ 			</result>
+		</action>
+
+ 		<!--跳转到修改养护记录界面 -->
+		<action name="gotoModifyMaintainRecordPage" class="MaintainAction" method="gotoModifyMaintainRecordPage"> 
+			<result name="success">
+ 				/WEB-INF/pages/modifyMaintainRecord.jsp
+ 			</result>
+		</action>
+
+ 		<!--跳转到修改养护记录界面 -->
+		<action name="gotoDailyViolateSuretySumPage" class="ChartsAction" method="gotoDailyViolateSuretySumPage"> 
+			<result name="success">
+ 				/WEB-INF/pages/dailyViolateSuretySum.jsp
+ 			</result>
+		</action>
+		
+		<!-- 跳转到违章保证金财务界面  -->
+ 		<action name="gotoVsFinancePage" method="gotoVsFinancePage" class="ViolateSuretyAction">
+ 			<result name="success">
+ 				/WEB-INF/pages/vsFinance.jsp
+ 			</result>
+ 		</action>
+		
+		<!-- 跳转到上传身份证界面  -->
+ 		<action name="gotoAddImagePathPage" method="gotoAddImagePathPage" class="CustomerAction">
+ 			<result name="success">
+ 				/WEB-INF/pages/addCustomerImage.jsp
+ 			</result>
+ 		</action>
+		
+		<!-- 跳转到上传驾驶证界面  -->
+ 		<action name="gotoAddDriverLicensePage" method="gotoAddImagePathPage" class="CustomerAction">
+ 			<result name="success">
+ 				/WEB-INF/pages/addDriverLicense.jsp
+ 			</result>
+ 		</action>
+ 		
+		
+		<!-- 跳转事故记录界面  -->
+ 		<action name="gotoAccidentPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/accident.jsp
+ 			</result>
+ 		</action>
+		
+		<!-- 跳转事故统计界面  -->
+ 		<action name="gotoAccidentChartPage" class="ChartsAction"  method="gotoDailyViolateSuretySumPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/accidentChart.jsp
+ 			</result>
+ 		</action>
+		
+		<!-- 跳转事故统计界面  -->
+ 		<action name="gotoConsumeSummaryPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/consumeSummary.jsp
+ 			</result>
+ 		</action>
+		
+		<!-- 跳转零部件预警界面  -->
+ 		<action name="gotoCarAlarmPage">
+ 			<result name="success">
+ 				/WEB-INF/pages/carAlarm.jsp
+ 			</result>
+ 		</action>
+		
+ 		
+ 		<!-- 文件上传 -->
+ 		<action name="uploadFile" class="FileUploadAction" method="uploadFile">
+ 			<result type="json" name="success">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+            <result type="json" name="error">
+                <param name="contentType">
+                    text/html
+                </param>
+            </result>
+ 		</action>
+ 		
+ 	</package>
+</struts>
