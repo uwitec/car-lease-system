@@ -1,0 +1,19 @@
+
+mainBG.gif文件
+
+
+
+第1个repeat	图片					loading bar的背景
+
+第2个repeat	图片					grid header 部分正常情况下的背景
+
+第3个repeat	图片					grid header 部分mouse over情况下的背景
+
+第4个repeat	图片					grid title 部分的背景
+
+第5个repeat	图片					div button normal情况下的背景
+
+第6个repeat	图片					div button mouse over情况下的背景
+
+第7个repeat	图片					分隔符
+

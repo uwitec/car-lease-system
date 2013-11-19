@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="FileManagement" table="T_FILE_MANAGEMENT" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="identity" />	
+		</id>
+		<property name="fileType" type="int" column="FILE_TYPE" />
+		<property name="carId" type="string" length="20" column="CAR_ID" />
+		<property name="fileIdentifyNumber" type="string" length="100" column="FILE_ID" />
+		<property name="usefulLife" column="DEADLINE" />
+		<property name="dateCheckIn" column="LAST_CHECK_IN_DATE" />
+		<property name="filePath" type="string" length="100" column="FILEPATH" />
+	</class>
+</hibernate-mapping>

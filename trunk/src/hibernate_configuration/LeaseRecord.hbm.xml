@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="LeaseRecord" table="T_LEASERECORD" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="identity" />	
+		</id>
+		<property name="serialNumber" type="string" length="50" column="SERIAL_NUMBER" />
+		<property name="customerIdCardNumber" type="string" length="20" column="IDCARDNUMBER" />
+		<property name="customerNameRemark" type="string" length="20" column="CUSTOMER_NAME" />
+		<property name="orderDate" column="ORDER_DATE" />
+		<property name="dateBegin" column="DATE_BEGIN" />
+		<property name="dateEnd" column="DATE_END" />
+		<property name="dateRelet" column="DATE_RELET_TO" />
+		<property name="dateSettle" column="DATE_SETTLE" />
+		<property name="carId" type="string" length="20" column="CAR_ID" />
+		<property name="isBeyondDeadline" type="string" length="1" column="BEYOND_DEADLINE" />
+		<property name="leaseRecordStatus" type="int" column="STATUS" />
+		<property name="transactor"  type="string" length="20" column="TRANSACTOR" />
+		<property name="finisher"  type="string" length="20" column="FINISHER" />
+		<property name="leaseWay"  type="int" column="LEASE_WAY" />
+		<property name="leaseModel"  type="int" column="LEASE_MODEL" />
+		<property name="fetchOrgId"  type="int" column="FETCH_ORG_ID" />
+		<property name="givebackOrgId"  type="int" column="GIVEBACK_ORG_ID" />
+		<property name="driverId"  type="string" length="50" column="DRIVER_ID" />
+		<property name="driverName"  type="string" length="20" column="DRIVER_NAME" />
+		<property name="contactor"  type="string" length="20" column="CONTACTOR" />
+		<property name="contactorNumber"  type="string" length="20" column="CONTACT_NUMBER" />
+		<property name="remark" type="string" length="200" column="REMARK" />
+		<property name="price"  type="int" column="PRICE" />
+		<property name="pricePerHour"  type="int" column="PRICE_PER_HOURE" />
+		<property name="pricePerKm"  type="int" column="PRICE_PER_KM" />
+		
+		
+		<property name="sender" type="string" length="100" column="SENDER" />
+		<property name="maker" type="string" length="100" column="MAKER" />
+		<property name="leaveTable" type="string" length="100" column="LEAVE_TABLE" />
+		<property name="backTable" type="string" length="100" column="BACK_TABLE" />
+		<property name="accident"  type="int" column="INCEDENT" />
+		<property name="reletFeeWaiting"  type="int" column="RELET_FEE_WAITING" />
+		<property name="orderId"  type="int" column="ORDER_ID" />
+		
+	</class>
+</hibernate-mapping>

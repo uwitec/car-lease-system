@@ -1,0 +1,120 @@
+.head_left{
+	position:absolute;
+	left:0px;
+	top:0px;
+	background-image: url("../images/top_logo.jpg");
+	width:490px;
+	height:87px;
+}
+.head_title{
+	overflow:hidden;
+	background-image: url("../images/top_bg.jpg");
+}
+.normal{
+	color:#FFC54B; 
+	font-size:14px;
+	overflow:hidden;
+	font-family:'微软雅黑'
+}
+
+.iconCls{
+	background-image: url("../images/user.png");
+}
+
+.root{
+	background-image: url("../images/book.png");
+}
+.leaf{
+	background-image: url("../images/tree/leaf.gif");
+}
+
+.welcome{
+	background-image: url("../images/welcome.jpg");
+	width:730px;
+	height:436px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-left: -365px;
+	margin-top: -218px;
+}
+.deleteUser{
+	background: url("../images/common/delete.gif") no-repeat center;
+	cursor: pointer;
+	margin-left:0px;
+	margin-top:4px;
+   	width:16px;
+   	height:16px;
+}
+
+.female{
+	background: url("../images/user_female.gif") no-repeat center;
+}
+.male{
+	background: url("../images/user_suit.png") no-repeat center;
+}
+.addRole{
+	background: url("../images/common/add.gif") no-repeat center;
+}
+.deleteRole{
+	background: url("../images/common/delete.gif") no-repeat center;
+}
+.modify{
+	background: url("../images/modify.gif") no-repeat center;
+}
+.locked_s{
+	background: url("../images/lock.gif") no-repeat center !important;
+}
+.unlocked_s{
+	background: url("../images/unlock.gif") no-repeat center;
+}
+.find{
+	background: url("../images/common/find.png") no-repeat center;
+}
+.customer{
+	background: url("../images/common/group.png") no-repeat center;
+}
+.repair{
+	background: url("../images/common/repair.png") no-repeat center;
+}
+.browse{
+	background: url("../images/browse.gif") no-repeat center;
+}
+
+.tab_panel_head{
+	background: url("../images/skin.png") no-repeat transparent 0px -110px;
+	margin: 0px;padding: 0px;list-style: none;
+}
+
+.tab_panel_head li{	
+	background: url("../images/skin.png") no-repeat transparent 0px -160px;	
+	float:left;
+	margin-right:2px; 
+	font: 14px 微软雅黑; 
+	height:27px;
+	width:73px;
+	cursor:pointer;
+	text-align: center;
+}
+.li_over{
+	background: url("../images/skin.png") no-repeat transparent 0px -190px !important;	
+}
+
+.tab_panel_bottom{
+	background: url("../images/skin.png") no-repeat transparent 0px -145px;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	height:2px;
+	overflow:hidden;
+	width:346px;	
+}
+.failed{
+	background:url("../images/failed.jpg") no-repeat transparent;	
+	width: 128px; height: 128px;
+}
+
+.smallLog{
+	background:url("../images/smallLog.jpg") no-repeat transparent;	
+	width: 200px; height: 100px;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="Price" table="T_PRICE" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="identity" />	
+		</id>
+		<property name="brandId" type="int" column="BRAND" />
+		<property name="carCategory" type="string" length="50" column="CAR_CATEGORY" />
+		<property name="foregift" type="int" column="FOREGIFT" />
+		<property name="price" type="int" column="PRICE" />
+		<property name="priceRM" type="int" column="PRICE_RM" />
+		<property name="pricePerHour" type="int" column="PRICE_PER_HOUR" />
+		<property name="pricePerHourRM" type="int" column="PRICE_PER_HOURE_RM" />
+		<property name="pricePerKm" type="int" column="PRICE_PER_KM" />
+		<property name="pricePerKmRM" type="int" column="PRICE_PER_KM_RM" />
+	</class>
+</hibernate-mapping>

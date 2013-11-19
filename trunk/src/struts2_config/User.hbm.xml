@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="User" table="T_USER" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="identity" />	
+		</id>
+		<property name="userName" type="string" length="20" column="USERNAME" />
+		<property name="password" type="string" length="200" column="PASSWORD" />
+		<property name="realName" type="string" length="20" column="REALNAME" />
+		<property name="qq" type="string" length="20" column="QQ" />
+		<property name="age" type="int" column="AGE" />
+		<property name="departmentId" type="int" column="DEPARTMENT_ID" />
+		<property name="flag" type="string" length="1" column="FLAG" />
+		<property name="gender" type="string" length="1" column="GENDER" />
+		<property name="idCardNumber" type="string" length="20" column="IDCARDNUMBER"/>
+	</class>
+</hibernate-mapping>

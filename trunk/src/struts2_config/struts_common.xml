@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+ 	<!-- 该xml文件下的action直接提交，系统不做任何拦截 -->
+ 	<package name="directSubmit" extends="json-default">
+ 		
+ 		<!-- 登录系统 -->
+ 		<action name="toMain">
+ 			<result>
+ 				/WEB-INF/pages/main.jsp
+ 			</result>
+ 	 	</action>
+ 		
+ 		<action name="login" class="LoginAction" method="login">
+ 			<interceptor-ref name="defaultStack" />
+ 			<result type="json">
+ 				<param name="root">output</param>
+ 			</result>
+ 	 	</action>
+ 		
+ 		<!-- 注销系统 -->
+ 		<action name="logout" class="LoginAction" method="logout">
+ 			<result name="success">
+ 				/login.jsp
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 欢迎光临 -->
+ 		<action name="welcome">
+ 			<result name="success">
+ 				/WEB-INF/pages/welcome.jsp
+ 			</result>
+ 		</action>
+ 	</package>
+</struts>

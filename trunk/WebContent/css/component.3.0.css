@@ -1,0 +1,411 @@
+/*** 省略号效果  ***/
+.xqb_overflow_ellipsis{
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+    -moz-binding: url('ellipsis.xml#ellipsis'); 					/*针对 Firefox 进行XUL的绑定*/
+}
+.relative{
+	position: relative;
+}
+
+.absolute{
+	position: absolute;
+}
+
+.transparent{
+	background: url("../images/component/transparent.gif");
+}
+
+.xqb_default_font{
+	font-family:微软雅黑;
+}
+
+.xqb_defaultBorder{
+	border:1px solid #99BBE8;
+}
+.xqb_defaultInnerBorderColor{
+	border:1px solid #A3C4F1;
+}
+.xqb_defaultBgColor{
+	background-color: #DFE8F6;
+}
+
+/***	tree 2.0	****/
+.xqb_tree_node{
+	height:20px;
+	width:1000px;
+	margin:0px;
+	border:none;
+	padding:0px;
+	padding-left:5px;
+	overflow:visible;
+	cursor:default;
+}
+.xqb_tree_check_normal{
+	background: url("../images/component/main.gif") transparent -30px -27px no-repeat;
+	width: 16px; height:18px;
+	float:left;
+}
+.xqb_tree_check_checked{
+	background: url("../images/component/main.gif") transparent -90px -27px no-repeat;
+	width: 16px; height:20px;
+	float:left;
+}
+.xqb_tree_check_someChecked{
+	background: url("../images/component/main.gif") transparent -60px -26px no-repeat;
+	width: 16px; height:20px;
+	float:left;
+}
+
+.xqb_tree_default{
+	background: url("../images/component/main.gif") transparent -448px -28px no-repeat;
+	width: 20px; height:20px;
+	float:left;
+}
+.xqb_tree_leaf{
+	background: url("../images/component/main.gif") transparent -569px -27px no-repeat;
+	width: 20px; height:20px;
+	float:left;
+}
+
+.xqb_expand_collapse{
+	width: 18px; 
+	height:20px;
+	float:left;
+}
+.xqb_tree_text{
+	white-space:nowrap;
+	line-height: 18px;
+	height:20px;
+	cursor:pointer;
+	font-size:14px;
+	font-family: "微软雅黑"; 
+	float:left;
+}
+.xqb_tree_1{
+	background: url("../images/component/main.gif") transparent -112px -30px no-repeat;
+}
+.xqb_tree_2{
+	background: url("../images/component/main.gif") transparent -142px -30px no-repeat;
+}
+.xqb_tree_3{
+	background: url("../images/component/main.gif") transparent -172px -30px no-repeat;
+}
+.xqb_tree_4{
+	background: url("../images/component/main.gif") transparent -206px -30px no-repeat;
+}
+.xqb_tree_5{
+	background: url("../images/component/main.gif") transparent -236px -30px no-repeat;
+}
+.xqb_tree_6{
+	background: url("../images/component/main.gif") transparent -266px -30px no-repeat;
+}
+.xqb_tree_8{
+	background: url("../images/component/main.gif") transparent -326px -30px no-repeat;
+}
+.xqb_tree_10{
+	background: url("../images/component/main.gif") transparent -386px -25px no-repeat;
+}
+.xqb_tree_11{
+	background: url("../images/component/main.gif") transparent -416px -25px no-repeat;
+}
+
+/*********	右键	弹出菜单		***************/
+.xqb_shadowBtn_left{
+	background: url("../images/component/main.gif") transparent -30px -130px no-repeat;
+	width: 5px; height: 24px; float: left;
+}
+.xqb_shadowBtn_right{
+	background: url("../images/component/main.gif") transparent -60px -130px no-repeat;
+	width: 5px; height: 24px; float: left; 
+}
+.xqb_shadowBtn_middle{
+	background: url("../images/component/main.gif") transparent -90px -130px repeat-x;
+	width: 1px; height: 24px; float: left; 
+}
+.xqb_ppMenu_sep{
+	background: url("../images/component/mainBGX.gif") transparent 0px -300px repeat-x;
+	width: 1px; height: 2px; 
+}
+.xqb_disabled_item{
+	color: gray !important;
+	cursor: default !important;
+}
+
+
+/***********  grid	************************************/
+/***********  panel	header	**********/
+.xqb_ph_left{
+	background: url("../images/component/main.gif") transparent -120px -160px no-repeat;
+	width: 4px; height: 22px; float : left;
+}
+.xqb_ph_right{
+	background: url("../images/component/main.gif") transparent -90px -160px no-repeat;
+	width: 4px; height: 22px; float : left;
+}
+.xqb_ph_middle{
+	background: url("../images/component/mainBGX.gif") transparent 0px -150px repeat-x;
+	width: 1px; height: 22px; float : left;
+}
+/*********	panel header 的icon **/
+.xqb_ph_icon{
+	margin:3px 2px 3px 2px; _margin:3px 1px 3px 1px; width:16px !important; height:16px !important;
+}
+.xqb_ph_text{
+	float:left; text-align: left; margin-left:3px; cursor:default;
+	height:22px; line-height:22px; font-size:13px; font-family:"微软雅黑";
+	font-weight:500;
+}
+.xqb_ph_dragable{
+	cursor: move !important;
+}
+.xqb_ph_close_n{
+	background: url("../images/component/main.gif") transparent -209px -159px no-repeat;
+}
+.xqb_ph_close_o{
+	background: url("../images/component/main.gif") transparent -239px -159px no-repeat;
+}
+
+.xqb_confirm_default_icon{
+	background: url("../images/component/main.gif") transparent -150px -159px no-repeat;
+}
+
+/***********  loading frame	************/
+.xqb_loading{
+	background: url("../images/component/mainBGX.gif") transparent 0px 0px repeat-x;
+	width: 1px; height: 31px;
+}
+.xqb_loading_icon{
+	background: url("../images/component/wait.gif"); width: 18px; height: 18px; float: left;
+}
+
+/********	DIV	button ******************************/
+.xqb_div_btn_right_n{
+	background: url("../images/component/main.gif") transparent -180px -90px no-repeat;
+	width:4px; height:22px; float: left;
+}
+.xqb_div_btn_left_n{
+	background: url("../images/component/main.gif") transparent -228px -90px no-repeat;
+	width:4px; height:22px; float: left;
+}
+.xqb_div_btn_right_o{
+	background: url("../images/component/main.gif") transparent -30px -90px no-repeat;
+	width:4px; height:22px; float: left;
+}
+.xqb_div_btn_left_o{
+	background: url("../images/component/main.gif") transparent -78px -90px no-repeat;
+	width:4px; height:22px; float: left;
+}
+.xqb_div_btn_middle_n{
+	background: url("../images/component/mainBGX.gif") transparent 0px -200px repeat-x;
+	height: 22px; float: left; overflow: hidden;
+}
+.xqb_div_btn_middle_o{
+	background: url("../images/component/mainBGX.gif") transparent 0px -250px repeat-x;
+	height: 22px; float: left; overflow: hidden;
+}
+.xqb_div_btn_right_p{
+	background: url("../images/component/main.gif") transparent -330px -160px no-repeat !important;
+}
+.xqb_div_btn_left_p{
+	background: url("../images/component/main.gif") transparent -299px -160px no-repeat !important;
+}
+.xqb_div_btn_middle_p{
+	background: url("../images/component/mainBGX.gif") transparent 0px -351px repeat-x !important;
+}
+
+.xqb_btn_n{
+	background: url("../images/component/mainBGX.gif") transparent 0px -202px repeat-x;
+	height: 22px; float: left; overflow: hidden;
+}
+.xqb_btn_o{
+	background-position: 0px -252px !important;
+}
+
+/********	global MSG ******************************/
+
+.xqb_globalMsg_bg{
+	background: url("../images/component/globalMsg.gif") no-repeat;
+	width:209px; height:51px;
+	padding : 5px 8px 5px 8px;
+	cursor : default; margin:0px;
+	font-size : 13px; font-family: 微软雅黑; line-height : 23px; 
+	text-indent: 2em;
+	overflow: hidden;
+}
+
+.xqb_single{
+	text-indent: 0em !important;
+	text-align: center;
+	line-height: 51px;
+}
+
+/*************	layout	************************************/
+.borderLayout_separator{
+	width: 9px;
+}
+
+.xqb_borderLayout_sep_left_o{
+	background: url("../images/component/main.gif") transparent -529px -90px no-repeat !important;
+	height : 35px; width:6px; position: absolute;
+	top:50%; right:2px; _right : 1px; margin-top: -18px; overflow: hidden; cursor: pointer;
+}
+.xqb_borderLayout_sep_left_n{
+	background: url("../images/component/main.gif") transparent -579px -90px no-repeat !important;
+	height : 35px; width:6px; position: absolute;
+	top:50%; right:2px; _right : 1px; margin-top: -18px; overflow: hidden; cursor: pointer;
+}
+.xqb_borderLayout_sep_right_o{
+	background: url("../images/component/main.gif") transparent -629px -90px no-repeat !important;
+	height : 35px; width:6px; position: absolute;
+	top:50%; right:2px; _right : 1px; margin-top: -18px; overflow: hidden; cursor: pointer;
+}
+.xqb_borderLayout_sep_right_n{
+	background: url("../images/component/main.gif") transparent -479px -90px no-repeat !important;
+	height : 35px; width:6px; position: absolute;
+	top:50%; right:2px; _right : 1px; margin-top: -18px; overflow: hidden; cursor: pointer;
+}
+
+/*********** pagination **************************/
+.xqb_pagination{
+	border: 0px; 
+	width:24px; 
+	height:24px;
+	cursor:pointer;
+}
+.xqb_first{
+	background: url("../images/component/main.gif") transparent -204px -54px no-repeat;
+}
+.xqb_prev{
+	background: url("../images/component/main.gif") transparent -321px -54px no-repeat;
+}
+.xqb_next{
+	background: url("../images/component/main.gif") transparent -381px -54px no-repeat;
+}
+.xqb_last{
+	background: url("../images/component/main.gif") transparent -264px -54px no-repeat;
+}
+.xqb_first_disabled{
+	background: url("../images/component/main.gif") transparent -174px -54px no-repeat  !important;
+	cursor:default !important;
+}
+.xqb_prev_disabled{
+	background: url("../images/component/main.gif") transparent -291px -54px no-repeat  !important;
+	cursor:default !important;
+}
+.xqb_next_disabled{
+	background: url("../images/component/main.gif") transparent -351px -54px no-repeat  !important;
+	cursor:default !important;
+}
+.xqb_last_disabled{
+	background: url("../images/component/main.gif") transparent -234px -54px no-repeat  !important;
+	cursor:default !important;
+}
+.xqb_pagination_label{
+	height: 24px; line-height: 24px; font-size:13px; font-family:'微软雅黑';
+}
+
+.xqb_refresh{
+	background: url("../images/component/main.gif") transparent -534px -56px no-repeat;
+}
+
+
+/***************** 		grid	***************************/
+.xqb_grid_title_col{
+	height: 24px; line-height: 23px; font-family: '微软雅黑'; font-size : 13px; float: left;
+}
+.xqb_grid_title_n{
+	background : url("../images/component/mainBGX.gif") transparent -0px -100px repeat-x;
+}
+.xqb_grid_title_o{
+	background : url("../images/component/mainBGX.gif") -0px -50px !important;
+}
+
+.xqb_grid_sep{
+	background : url("../images/component/main.gif") transparent -780px -91px no-repeat !important;
+	width: 1px; height: 24px; float: right;
+}
+
+.xqb_number_content{
+	background: url("../images/component/mainBGY.gif") transparent 6px 0px repeat-y !important;
+	height: 23px; border-bottom: 1px solid #EDEDED;
+	line-height: 23px; font-family: '微软雅黑'; font-size : 13px;
+	float: left;
+}
+
+.xqb_check_column_normal{
+	background: url("../images/component/main.gif") transparent -626px -24px no-repeat;
+	cursor:pointer !important; float: left;
+	width: 22px; height:24px;
+}
+.xqb_check_column_checked{
+	background-position: -506px -24px !important;
+}
+
+.xqb_title_button_n{
+	background: url("../images/component/main.gif") transparent -60px -160px no-repeat;
+	width: 14px; height: 24px; float: right;
+	margin-top: -1px;
+}
+.xqb_title_button_o{
+	background-position: -30px -160px !important;
+}
+
+.xqb_odd{
+	background-color:#FAFAFA;
+}
+.xqb_even{
+	background-color:#F5F5F5;
+}
+.xqb_over{
+	background-color:#F0F0F0;
+}
+.xqb_selected{
+	background-color:#DDDEEE !important;
+}
+
+.xqb_grid_bbar{
+	background : url("../images/component/mainBGX.gif") transparent 0px -400px repeat-x;
+	height: 29px;
+}
+
+/*** tree grid arrow ***/
+.xqb_tg_arrow{
+	width : 20px; height : 23px; float: left;
+}
+.xqb_tg_arrow_expand_n{
+	background : url("../images/component/main.gif") transparent -381px -160px;
+}
+.xqb_tg_arrow_collapse_n{
+	background : url("../images/component/main.gif") transparent -350px -160px;
+}
+.xqb_tg_arrow_expand_o{
+	background-position : -441px -160px !important;
+}
+.xqb_tg_arrow_collapse_o{
+	background-position : -411px -160px !important;
+}
+
+.xqb_folder_close{
+	background : url("../images/component/main.gif") transparent -507px -156px;
+}
+.xqb_folder_open{
+	background-position : -477px -156px !important;
+}
+.xqb_tg_leaf{
+	background : url("../images/component/main.gif") transparent -568px -24px;
+}
+
+.conf{
+	background: url("../images/component/main.gif") transparent -150px -198px no-repeat;
+}
+.property{
+	background: url("../images/component/main.gif") transparent -180px -198px no-repeat;
+}
+.methods{
+	background: url("../images/component/main.gif") transparent -210px -198px no-repeat;
+}
+.event{
+	background: url("../images/component/main.gif") transparent -240px -198px no-repeat;
+}

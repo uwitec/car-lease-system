@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="Dictionary" table="T_DICTIONARY" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="increment" />	
+		</id>
+		<property name="remark" type="string" length="50" column="REMARK" />
+		<property name="groupRemark" type="string" length="50" column="GROUP_REMARK" />
+		<property name="groupId" type="int" column="GROUP_ID" />
+	</class>
+</hibernate-mapping>

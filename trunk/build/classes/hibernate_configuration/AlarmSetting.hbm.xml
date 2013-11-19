@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.org.dqgb.entity">
+
+	<class name="AlarmSetting" table="T_ALARM_SETTING" lazy="true">
+
+		<id name="id" column="PK_ID">
+			<generator class="identity" />	
+		</id>
+		<property name="userName" type="string" length="20" column="USERNAME" />
+		<property name="alarmType" type="int" column="FK_ALARM_TYPE_ID" />
+	</class>
+</hibernate-mapping>
